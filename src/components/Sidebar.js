@@ -14,12 +14,13 @@ import styled from 'styled-components'
 const Sidebar = () => {
     return (
         <SidebarWrapper>
-        <SidebarRow src="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="Abdullah" />
-        <SidebarRow Icon={EmojiFlags} title="Globe" />
-        <SidebarRow Icon={People} title="Friends" />
-        <SidebarRow Icon={Chat} title="Upload Caption" />
-        <SidebarRow Icon={VideoLibrary} title="Upload Image/Video" />
-        <SidebarRow Icon={ExpandMore} title="More" />
+        <SidebarRow src="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="Abdullah" url={window.location.href}  />
+        {/* Replace globe URL with the url you get when you open globe with live server */}
+        <SidebarRow Icon={EmojiFlags} title="Globe" url={`http://127.0.0.1:5500/ex_prac/bgn-hackathon/globe.html`} />
+        <SidebarRow Icon={People} title="Friends" url={window.location.href} />
+        <SidebarRow Icon={Chat} title="Upload Caption" url={window.location.href}/>
+        <SidebarRow Icon={VideoLibrary} title="Upload Image/Video" url={window.location.href}/>
+        <SidebarRow Icon={ExpandMore} title="More" url={window.location.href}/>
         </SidebarWrapper>
     )
 }

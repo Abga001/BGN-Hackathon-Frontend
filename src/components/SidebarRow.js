@@ -2,13 +2,15 @@ import React from "react"
 import Avatar from "@mui/material/Avatar";
 import styled from "styled-components"
 
-const SidebarRow = ({ src, Icon, title }) => {
+const SidebarRow = ({ src, Icon, title , url}) => {
     return (
-        <SidebarRowWrapper>
-            {src && <Avatar src={src}/>}
-            {Icon && <Icon />}
-            <p>{title}</p>
-        </SidebarRowWrapper>
+        <div onClick={() => window.location.replace(url)}>
+            <SidebarRowWrapper>
+                {src && <Avatar src={src}/>}
+                {Icon && <Icon />}
+                <p>{title}</p>
+            </SidebarRowWrapper>
+        </div>
     )
 }
 const SidebarRowWrapper = styled.div`

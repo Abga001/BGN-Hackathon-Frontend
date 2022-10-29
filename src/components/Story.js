@@ -1,12 +1,15 @@
 import Avatar from "@mui/material/Avatar";
 import React from "react"
 import styled from "styled-components"
-const Story = ({ image, profileSrc, title }) => {
+const Story = ({ image, profileSrc, title , url}) => {
     return (
-        <StoryWrapper imageUrl={`${image}`}>
+        <div onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}>
+            <StoryWrapper imageUrl={`${image}`}>
             <Avatar src={profileSrc} className='story__avatar' />
             <h4>{title}</h4>
         </StoryWrapper>
+        </div>
+        
     )
 }
 
