@@ -1,17 +1,19 @@
 import firebase from 'firebase/app';
 
 const firebaseConfig = {
+  apiKey: "AIzaSyCJzVEXHL900iuQYlLJIEaKv6rNdbfDkDE",
 
-    apiKey: "AIzaSyDaDKogp2LMjUBz2jrk5mFTAKXkD8NOp-0",
+  authDomain: "bgn-hack22lon-6506.firebaseapp.com",
+
+  projectId: "bgn-hack22lon-6506",
+
+  storageBucket: "bgn-hack22lon-6506.appspot.com",
+
+  messagingSenderId: "116285399780",
+
+  appId: "1:116285399780:web:890cfb767245469e2282f1",
+
+  measurementId: "G-BXL1E4T441"
+
   
-    authDomain: "popular-social-mern-8c4b3.firebaseapp.com",
-  
-    projectId: "popular-social-mern-8c4b3",
-  
-    storageBucket: "popular-social-mern-8c4b3.appspot.com",
-  
-    messagingSenderId: "607269875467",
-  
-    appId: "1:607269875467:web:fa5f5a95d5a3d9b65ebc0e"
-  
-  };
+};
