@@ -28,7 +28,7 @@ const StoryWrapper = styled.div`
     }
     .story__avatar {
         margin: 10px;
-        border: 5px solid #2e81f4;
+        border: 5px solid #FF8C00;
     }
     h4 {
         position: absolute;

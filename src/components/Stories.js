@@ -4,29 +4,27 @@ import styled from "styled-components"
 const Stories = () => {
     return (
         <StoriesWrapper>
-            <Story image="https://images.unsplash.com/photo-1602524206684-fdf6393c7d89?ixid=MX
-wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit
-=crop&w=1350&q=80"
-profileSrc="https://pbs.twimg.com/profile_images/1020939891457241088/
-fcbu814K_400x400.jpg"
-title="Nabendu"
+            <Story image="https://images.unsplash.com/photo-1472173148041-00294f0814a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+profileSrc="image.png"
+title="History"
 />
 <Story
-image="https://images.unsplash.com/photo-1602526430780-782d6b1783fa?
-ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&
-auto=format&fit=crop&w=1350&q=80"
+image="https://images.unsplash.com/photo-1526318896980-cf78c088247c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBmb29kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 profileSrc="https://pbs.twimg.com/profile_images/1020939891457241088/
 fcbu814K_400x400.jpg"
-title="TWD"
+title="Food"
 />
 <Story
-image="https://www.jonesday.com/-/media/files/
-publications/2019/05/when-coding-is-criminal/when-coding-is-criminal.
-jpg?
-h=800&w=1600&la=en&hash=5522AA91198A168017C511FCBE77E201"
+image="https://images.unsplash.com/photo-1603048588665-791ca8aea617?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dmlueWx8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
 profileSrc="https://pbs.twimg.com/profile_images/1020939891457241088/
 fcbu814K_400x400.jpg"
-title="Nabendu"
+title="Music"
+/>
+<Story
+image="https://images.unsplash.com/photo-1587554656671-e211fc57927b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGFmcmljYW4lMjBjbG90aGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+profileSrc="https://pbs.twimg.com/profile_images/1020939891457241088/
+fcbu814K_400x400.jpg"
+title="Clothing"
 />
         </StoriesWrapper>
     )

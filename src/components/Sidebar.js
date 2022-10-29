@@ -15,12 +15,10 @@ const Sidebar = () => {
     return (
         <SidebarWrapper>
         <SidebarRow src="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="Abdullah" />
-        <SidebarRow Icon={LocalHospital} title="Info Center" />
-        <SidebarRow Icon={EmojiFlags} title="Pages" />
+        <SidebarRow Icon={EmojiFlags} title="Globe" />
         <SidebarRow Icon={People} title="Friends" />
-        <SidebarRow Icon={Chat} title="Messenger" />
-        <SidebarRow Icon={Storefront} title="Marketplace" />
-        <SidebarRow Icon={VideoLibrary} title="Videos" />
+        <SidebarRow Icon={Chat} title="Upload Caption" />
+        <SidebarRow Icon={VideoLibrary} title="Upload Image/Video" />
         <SidebarRow Icon={ExpandMore} title="More" />
         </SidebarWrapper>
     )

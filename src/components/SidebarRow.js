@@ -26,6 +26,6 @@ const SidebarRowWrapper = styled.div`
     }
     .MuiSvgIcon-root{
         font-size:xx-large;
-        color: #2e81f4;
+        color: #FF8C00;
     }`
 export default SidebarRow

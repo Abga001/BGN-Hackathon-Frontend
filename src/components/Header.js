@@ -128,14 +128,14 @@ const HeaderCenter = styled.div`
       padding: 0 30px;
       border-bottom: none;
       .MuiSvgIcon-root {
-        color: #2e81f4;
+        color: #FF8C00;
       }
     }
   }
   .header__option--active {
-    border-bottom: 4px solid #2e81f4;
+    border-bottom: 4px solid #FF8C00;
     .MuiSvgIcon-root {
-      color: #2e81f4;
+      color: #FF8C00;
     }
   }
 `;
