@@ -20,7 +20,14 @@ function getCode2(country_name){
     return country.iso2.toLowerCase()
 }
 
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+      return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ');
+  }
+
 function getCode3(country_name){
+    country_name = titleCase(country_name)
     let country = lookup2.countries({name: country_name})[0];
     if(country == null){
         return ''
@@ -29,7 +36,7 @@ function getCode3(country_name){
 }
 
 function getCount(arr,target){
-    if (target == null){
+    if (target == ''){
         return 0
     }
     let count = 0
