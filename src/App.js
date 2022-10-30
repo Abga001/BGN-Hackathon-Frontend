@@ -3,6 +3,13 @@ import styled from 'styled-components'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Feed from './components/Feed'
+import Widget from './components/Widget'
+import React, { Component } from 'react';
+// import ScriptTag from 'react-script-tag';
+ 
+
+ 
+
 
 function App() {
   return (
@@ -13,9 +20,13 @@ function App() {
       <div className="app__body">
       <Sidebar />
       <Feed />
+      <Widget />
       </div>
       </AppWrapper>
+      {/* <ScriptTag isHydrating={true} type="text/javascript" src="chart_globe.js" /> */}
     </div>
+
+
   );
 }
 
