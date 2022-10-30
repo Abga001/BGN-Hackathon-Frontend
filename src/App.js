@@ -7,7 +7,6 @@ import Widget from './components/Widget'
 import React, { Component } from 'react';
 import { useState } from 'react'
 import Login from './components/Login'
-import Register from './components/Register'
 // import { auth } from './firebase'
 import { useStateValue } from './StateProvider';
 
@@ -33,7 +32,6 @@ function App() {
     ) : (
       <>
       <Login />
-      <Register />
       </>
     )}
     </AppWrapper>
