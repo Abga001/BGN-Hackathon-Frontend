@@ -23,7 +23,8 @@ const Post = ({ profilePic, message, timestamp, imgName, username }) => {
             {
                 imgName ? (
                     <div className="post__image">
-                        <img src={imgName} alt="Posts" />
+                        <img src={`http://localhost:9000/images/
+single?name=${imgName}`} alt="Posts" />
                     </div> 
                     ): (
                         console.log('DEBUG >>> no image here')
@@ -54,10 +55,8 @@ const Post = ({ profilePic, message, timestamp, imgName, username }) => {
 const PostWrapper = styled.div`
     width: 100%;
     margin-top: 15px;
-    align-items: center;
     border-radius: 15px;
-    background: white;
-    opacity: 0.85;
+    background-color: white;
     box-shadow: 0px 5px 7px -7px rgba(0,0,0,0.75);
     .post__image{
         img{
@@ -66,6 +65,7 @@ const PostWrapper = styled.div`
     }
 `
 const PostTop = styled.div`
+    
     display: flex;
     position: relative;
     align-items: center;

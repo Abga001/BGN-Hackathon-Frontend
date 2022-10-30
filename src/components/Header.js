@@ -12,6 +12,7 @@ import styled from "styled-components";
 // import ForumIcon from '@mui/icons-material/Flag'
 // import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { useStateValue } from '../StateProvider'
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import {
@@ -28,16 +29,17 @@ import {
 } from "@mui/icons-material";
 
 const Header = () => {
+  const [{ user }, dispatch] = useStateValue()
   return (
     <HeaderWrapper>
       <HeaderLeft>
-        <img src="logo192.png" alt="Popular" />
+        <img src="wafflelogo.png" alt="Popular" />
       </HeaderLeft>
       <HeaderInput>
         <Search />
         <input placeholder="Search Popular" type="text" />
       </HeaderInput>
-      <HeaderCenter>
+      {/* <HeaderCenter>
         <div className="header__option header__option--active">
           <Home fontsize="large" />
         </div>
@@ -53,33 +55,29 @@ const Header = () => {
         <div className="header__option">
           <SupervisedUserCircle fontsize="large" />
         </div>
-      </HeaderCenter>
+      </HeaderCenter> */}
       <HeaderRight>
-        <div className="header__info">
-          <Avatar
-            src="https://pbs.twimg.com/profile_
-images/1020939891457241088/fcbu814K_400x400.jpg "
-          />
-          <h4>Nabendu</h4>
-        </div>
-        <IconButton>
+      <div className="header__info">
+<Avatar src={user.photoURL} />
+<h4>{user.displayName}</h4>
+</div>
+        {/* <IconButton>
           <Add />
-        </IconButton>
+        </IconButton> */}
         <IconButton>
           <Forum />
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <NotificationsActive />
         </IconButton>
         <IconButton>
           <ExpandMore />
-        </IconButton>
+        </IconButton> */}
       </HeaderRight>
     </HeaderWrapper>
   );
 };
 const HeaderWrapper = styled.div`
-  opacity: 0.95;
   display: flex;
   padding: 15px 20px;
   justify-content: space-between;
@@ -108,7 +106,12 @@ const HeaderInput = styled.div`
     border: none;
     background-color: transparent;
     outline-width: 0;
+    width: 330px;
+    margin: 0 auto;
   }
+  // input[type=text]:focus {
+  //   width: 380px;
+  // }
 `;
 const HeaderCenter = styled.div`
   display: flex;

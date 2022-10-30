@@ -5,29 +5,43 @@ import Sidebar from './components/Sidebar'
 import Feed from './components/Feed'
 import Widget from './components/Widget'
 import React, { Component } from 'react';
-// import ScriptTag from 'react-script-tag';
- 
-
- 
-
+import { useState } from 'react'
+import Login from './components/Login'
+import Register from './components/Register'
+// import { auth } from './firebase'
+import { useStateValue } from './StateProvider';
 
 function App() {
+  //const [user, setUser] = useState(null)
+  const [{ user }, dispatch] = useStateValue()
   return (
     
-    <div className="App">
-      <AppWrapper>
-      <Header />
-      <div className="app__body">
-      <Sidebar />
-      <Feed />
-      <Widget />
-      </div>
-      </AppWrapper>
-      {/* <ScriptTag isHydrating={true} type="text/javascript" src="chart_globe.js" /> */}
+    <div>
+    <AppWrapper> 
+    {user ? (
+    
+    <div>
+    <Header />
+    <div className="app__body">
+    <Sidebar />
+    {/* <Widget /> */}
+    <Feed />
+
     </div>
+    
+    /</div>
+    ) : (
+      <>
+      <Login />
+      <Register />
+      </>
+    )}
+    </AppWrapper>
+    
+  </div>
 
+);
 
-  );
 }
 
 const AppWrapper = styled.div`

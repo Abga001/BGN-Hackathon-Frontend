@@ -4,22 +4,60 @@ import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import styled from 'styled-components'
+import { useStateValue } from '../StateProvider'
+import axios from 'axios'
+import FormData from 'form-data'
 
 const Messenger = () => {
     const [input, setInput] = useState('')
     const [image, setImage] = useState(null)
+    const [{ user }, dispatch] = useStateValue()
     const handleChange = e => {
         if(e.target.files[0])
             setImage(e.target.files[0])
     }
     const handleSubmit = e => {
         e.preventDefault()
-    }
+        if(image) {
+        const imgForm = new FormData()
+        imgForm.append('file',image, image.name)
+        axios.post('/upload/image', imgForm, {
+        headers: {'accept': 'application/json','Accept-Language': 'en-US,en;q=0.8',
+        'Content-Type': `multipart/form-data;
+        boundary=${imgForm._boundary}`
+        }
+        }).then(res => {
+        const postData = {
+        text: input,
+        imgName: res.data.filename,
+        user: user.displayName,
+        avatar: user.photoURL,
+        timestamp: Date.now()
+        }
+        savePost(postData)
+        })
+        } else {
+        const postData = {
+        text: input,
+        user: user.displayName,
+        avatar: user.photoURL,
+        timestamp: Date.now()
+        }
+        savePost(postData)
+        }
+        setInput('')
+        setImage(null)
+        }
+        const savePost = async postData => {
+        await axios.post('/upload/post', postData)
+        .then(res => {
+        console.log(res)
+        })
+        }
 return (
         <MessengerWrapper>
             <MessengerTop>
-                <Avatar src=" https://pbs.twimg.com/profile_images/
-                1020939891457241088/fcbu814K_400x400.jpg " />
+                <Avatar src={user.photoURL} />
          <form>
                     <input
                         type="text"
@@ -58,8 +96,7 @@ const MessengerWrapper = styled.div`
     display: flex;
     margin-top: 30px;
     flex-direction: column;
-    background: white;
-    opacity: 0.85;
+    background-color: white;
     border-radius: 15px;
     box-shadow: 0px 5px 7px -7px rgba(0,0,0,0.75);
     width: 100%;
@@ -103,6 +140,7 @@ const MessengerBottom = styled.div`
             background-color: #eff2f5;
             border-radius: 20px;
             cursor: pointer;
-} }
+} 
+}
 `
 export default Messenger
