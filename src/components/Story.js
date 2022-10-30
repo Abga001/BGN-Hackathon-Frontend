@@ -31,7 +31,7 @@ const StoryWrapper = styled.div`
     }
     .story__avatar {
         margin: 10px;
-        border: 5px solid #FF8C00;
+        border: 3px solid #FF8C00;
     }
     h4 {
         position: absolute;

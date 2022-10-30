@@ -79,6 +79,7 @@ images/1020939891457241088/fcbu814K_400x400.jpg "
   );
 };
 const HeaderWrapper = styled.div`
+  opacity: 0.95;
   display: flex;
   padding: 15px 20px;
   justify-content: space-between;

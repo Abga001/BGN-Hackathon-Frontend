@@ -20,7 +20,8 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-background-color: #f1f2f5;
+background: rgb(227,53,19);
+background: linear-gradient(90deg, rgba(227,53,19,1) 0%, rgba(249,120,0,1) 45%, rgba(255,166,0,1) 96%);
 .app__body {
   display: flex;
 }

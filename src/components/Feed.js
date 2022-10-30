@@ -5,13 +5,13 @@ import Messenger from './Messenger'
 import Post from './Post'
 var url = require("url");
 let country = url.parse(document.URL).pathname
-country = country.substring(1)
+country = country.substring(1).replaceAll('%20',' ')
 
 
 const Feed = () => {
     return (
         <FeedWrapper>
-            <h1>Everything {country.toUpperCase()}!</h1>
+            <h1>Literally everything about {country.toUpperCase()}!</h1>
             <Stories />
             <Messenger />
             <Post     profilePic="https://pbs.twimg.com/profile_
@@ -39,5 +39,9 @@ padding: 30px 150px;
 display: flex;
 flex-direction: column;
 align-items: center;
+h1{
+    color: white;
+}
 `
+
 export default Feed

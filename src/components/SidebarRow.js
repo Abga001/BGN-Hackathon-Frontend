@@ -15,7 +15,11 @@ const SidebarRow = ({ src, Icon, title , url}) => {
 }
 const SidebarRowWrapper = styled.div`
     display: flex;
+    background: white;
+    opacity: 0.85;
+    border-radius: 15px;
     align-items: center;
+    margin-top: 5px;
     padding: 10px;
     cursor: pointer;
     &:hover {

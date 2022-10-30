@@ -4,11 +4,10 @@ import styled from "styled-components"
 import getCode from "../country_code"
 var url = require("url");
 let country = url.parse(document.URL).pathname
-country = country.substring(1).replace('%20',' ').toLowerCase()
+country = country.substring(1).replaceAll('%20',' ')
 let a2 = getCode(country)
 let flagURL = `https://flagcdn.com/${a2}.svg`
-
-country = country.replace(" ", "_");
+country = country.replaceAll(" ", "_");
 let historyURL = `https://en.wikipedia.org/wiki/${country}#History`
 let foodURL = `https://en.wikipedia.org/wiki/${country}#Cuisine`
 let musicURL = `https://en.wikipedia.org/wiki/${country}#Music`

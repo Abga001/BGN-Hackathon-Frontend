@@ -25,6 +25,7 @@ const Sidebar = () => {
     )
 }
 
-const SidebarWrapper = styled.div``
+const SidebarWrapper = styled.div`
+`
 
 export default Sidebar

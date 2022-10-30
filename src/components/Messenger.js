@@ -58,7 +58,8 @@ const MessengerWrapper = styled.div`
     display: flex;
     margin-top: 30px;
     flex-direction: column;
-    background-color: white;
+    background: white;
+    opacity: 0.85;
     border-radius: 15px;
     box-shadow: 0px 5px 7px -7px rgba(0,0,0,0.75);
     width: 100%;
