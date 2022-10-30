@@ -108,10 +108,7 @@ const HeaderInput = styled.div`
     outline-width: 0;
     width: 330px;
     margin: 0 auto;
-
-
   }
-
   // input[type=text]:focus {
   //   width: 380px;
   // }

@@ -22,7 +22,7 @@ const Login = () => {
     return (
     <LoginWrapper>
     <div className="login__logo">
-    <img src="waffleorange.png" alt="login" />
+    <img src="../waffle_pic.png" alt="login" />
     <h1></h1>
     </div>
     <Button type='submit' className="login__btn"

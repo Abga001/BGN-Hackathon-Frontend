@@ -2,36 +2,36 @@ import React from "react"
 import Avatar from "@mui/material/Avatar";
 import styled from "styled-components"
 
-const SidebarRow = ({ src, Icon, title }) => {
+const SidebarRow = ({ src, Icon, title , url}) => {
     return (
-        <SidebarRowWrapper>
-            {src && <Avatar src={src}/>}
-            {Icon && <Icon />}
-            <p>{title}</p>
-        </SidebarRowWrapper>
+        <div onClick={() => window.location.replace(url)}>
+            <SidebarRowWrapper>
+                {src && <Avatar src={src}/>}
+                {Icon && <Icon />}
+                <p>{title}</p>
+            </SidebarRowWrapper>
+        </div>
     )
 }
 const SidebarRowWrapper = styled.div`
     display: flex;
+    background: white;
+    opacity: 0.85;
+    border-radius: 15px;
     align-items: center;
-    padding: 7px;
+    margin-top: 5px;
+    padding: 10px;
     cursor: pointer;
-    // background-color: #00a4e5;
-    // border-radius: 10px;
-    
     &:hover {
         background-color: lightgray;
         border-radius: 10px;
     }
     p{
         margin-left:20px;
-        font-weight: 650;
-        font-size: 15px;
-        
+        font-weight: 600
     }
     .MuiSvgIcon-root{
         font-size:xx-large;
-        color: #00a4e5;
-        
+        color: #FF8C00;
     }`
 export default SidebarRow

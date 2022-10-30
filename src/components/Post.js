@@ -57,7 +57,6 @@ const PostWrapper = styled.div`
     margin-top: 15px;
     border-radius: 15px;
     background-color: white;
-
     box-shadow: 0px 5px 7px -7px rgba(0,0,0,0.75);
     .post__image{
         img{

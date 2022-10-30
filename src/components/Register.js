@@ -23,27 +23,27 @@ const Register = () => {
 }   
 
 const RegisterWrapper = styled.div`
-display: grid; 
-place-items: right 
-height: 100vh 
-.Register_logo {
-    display: flex; 
-    flex-direction: column; 
-    img{
-        object-fit: Contain; 
-        height: 150px; 
-        max-width: 200px; 
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    .login__logo {
+    display: flex;
+    flex-direction: column;
+    img {
+    object-fit: contain;
+    height: 150px;
+    max-width: 200px;
+        }
     }
-}
 .register__btn{
-    width: 300px; 
+    width: 300px;
     background-color: #2e81f4;
-    color: #eff2f5 
-    font-weight: 800; 
-    &:hover { 
-        background-color: white; 
-        color: #2e81f4;
-    }
+    color: #eff2f5;
+    font-weight: 800;
+    &:hover {
+    background-color: white;
+    color: #2e81f4;
+        }
 }
 `
 

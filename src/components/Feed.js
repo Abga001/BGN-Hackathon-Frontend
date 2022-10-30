@@ -5,6 +5,10 @@ import styled from "styled-components";
 import Messenger from "./Messenger";
 import Post from "./Post";
 import Pusher from 'pusher-js'
+var url = require("url");
+let country = url.parse(document.URL).pathname
+country = country.substring(1).replaceAll('%20',' ')
+
 const pusher = new Pusher('aedcf8269706b7325736', {
 cluster: 'eu'
 });
@@ -28,6 +32,7 @@ const Feed = () => {
   }, []);
   return (
     <FeedWrapper>
+        <h1>Welcome to {country.toUpperCase()}</h1>
       <Stories />
       <Messenger />
       {
@@ -45,12 +50,13 @@ const Feed = () => {
   );
 };
 const FeedWrapper = styled.div`
-  flex: 1;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 30px 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+flex: 1;
+padding: 30px 150px;
+display: flex;
+flex-direction: column;
+align-items: center;
+h1{
+    color: white;
+}
+`
 export default Feed;

@@ -4,9 +4,9 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Feed from './components/Feed'
 import Widget from './components/Widget'
+import React, { Component } from 'react';
 import { useState } from 'react'
 import Login from './components/Login'
-import Register from './components/Register'
 // import { auth } from './firebase'
 import { useStateValue } from './StateProvider';
 import { Axios } from 'axios';
@@ -33,7 +33,6 @@ function App() {
     ) : (
       <>
       <Login />
-      <Register />
       </>
     )}
     </AppWrapper>
@@ -45,7 +44,8 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-background-color: #f1f2f5;
+background: rgb(227,53,19);
+background: linear-gradient(90deg, rgba(227,53,19,1) 0%, rgba(249,120,0,1) 45%, rgba(255,166,0,1) 96%);
 .app__body {
   display: flex;
 }
