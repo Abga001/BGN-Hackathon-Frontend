@@ -43,6 +43,7 @@ const Feed = () => {
             timestamp={entry.timestamp}
             imgName={entry.imgName}
             username={entry.user}
+            country={entry.country}
           /> 
         ))
       }
