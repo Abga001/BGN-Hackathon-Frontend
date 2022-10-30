@@ -12,7 +12,7 @@ cluster: 'eu'
 const Feed = () => {
   const [postsData, setPostsData] = useState([]);
   const syncFeed = () => {
-    axios.get("/posts").then((res) => {
+    axios.get("http://localhost:9000/posts").then((res) => {
       console.log(res.data);
       setPostsData(res.data);
     });
@@ -30,33 +30,17 @@ const Feed = () => {
     <FeedWrapper>
       <Stories />
       <Messenger />
-      {postsData.map((entry) => (
-        <Post
-          profilePic={entry.avatar}
-          message={entry.text}
-          timestamp={entry.timestamp}
-          imgName={entry.imgName}
-          username={entry.user}
-        />
-      ))}
-      <Post
-        profilePic="https://pbs.twimg.com/profile_
-            images/1020939891457241088/fcbu814K_400x400.jpg"
-        message="Awesome post on CSS Animation. Loved it"
-        timestamp="1609512232424"
-        imgName="https://res.cloudinary.com/dxkxvfo2o/image/upload/
-            v1598295332/CSS_Animation_xrvhai.png"
-        username="Nabendu"
-      />
-      <Post
-        profilePic="https://pbs.twimg.com/profile_
-            images/1020939891457241088/fcbu814K_400x400.jpg"
-        message="BookList app in Vanilla JavaScript"
-        timestamp="1509512232424"
-        imgName="https://res.cloudinary.com/dxkxvfo2o/image/upload/
-            v1609138312/Booklist-es6_sawxbc.png"
-        username="TWD"
-      />
+      {
+        postsData.map(entry => (
+          <Post
+            profilePic={entry.avatar}
+            message={entry.text}
+            timestamp={entry.timestamp}
+            imgName={entry.imgName}
+            username={entry.user}
+          /> 
+        ))
+      }
     </FeedWrapper>
   );
 };

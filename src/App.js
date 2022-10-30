@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 // import { auth } from './firebase'
 import { useStateValue } from './StateProvider';
+import { Axios } from 'axios';
 
 function App() {
   //const [user, setUser] = useState(null)

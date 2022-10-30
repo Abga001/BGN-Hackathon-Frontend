@@ -17,11 +17,12 @@ const Messenger = () => {
             setImage(e.target.files[0])
     }
     const handleSubmit = e => {
+        console.log(`submitting`)
         e.preventDefault()
         if(image) {
         const imgForm = new FormData()
         imgForm.append('file',image, image.name)
-        axios.post('/upload/image', imgForm, {
+        axios.post('http://localhost:9000/upload/image', imgForm, {
         headers: {'accept': 'application/json','Accept-Language': 'en-US,en;q=0.8',
         'Content-Type': `multipart/form-data;
         boundary=${imgForm._boundary}`
@@ -49,7 +50,7 @@ const Messenger = () => {
         setImage(null)
         }
         const savePost = async postData => {
-        await axios.post('/upload/post', postData)
+        await axios.post('http://localhost:9000/upload/post', postData)
         .then(res => {
         console.log(res)
         })
@@ -71,8 +72,11 @@ return (
                         className="messenger__fileSelector"
                         onChange={handleChange}
                     />
-                    <button onClick={handleSubmit} type="submit">Hidden</
-                    button>
+                    <button 
+                        onClick={handleSubmit} 
+                        type="submit">
+                            Submit
+                    </button>
                 </form>
             </MessengerTop>
             <MessengerBottom>
@@ -120,7 +124,7 @@ const MessengerTop = styled.div`
         .messenger__fileSelector{
 width: 20%; }
         button {
-            display: none;
+            // display: none;
 } }
 `
 const MessengerBottom = styled.div`
