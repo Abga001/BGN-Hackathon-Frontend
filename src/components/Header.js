@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderLeft>
-        <img src="wafflelogo.png" alt="Popular" />
+        <img src="../waffle_pic.png" alt="Popular" />
       </HeaderLeft>
       <HeaderInput>
         <Search />

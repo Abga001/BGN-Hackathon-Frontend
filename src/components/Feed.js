@@ -9,14 +9,24 @@ var url = require("url");
 let country = url.parse(document.URL).pathname
 country = country.substring(1).replaceAll('%20',' ')
 
+const countryN = country
 const pusher = new Pusher('aedcf8269706b7325736', {
 cluster: 'eu'
 });
 
 const Feed = () => {
   const [postsData, setPostsData] = useState([]);
+  // const queryParams = {
+  //   countryName: country,
+  // };
+  // const params = new HttpParams(queryParams)
+  // let params = new HttpParams()
+  // .set('countryName', {country});
+
   const syncFeed = () => {
-    axios.get("http://localhost:9000/posts").then((res) => {
+    // const res = await axios.get('https://httpbin.org/get', { params: { answer: 42 } });
+    console.log(countryN)
+    axios.get(`http://localhost:9000/posts`, { params: {countryName : {countryN}}}).then((res) => {
       console.log(res.data);
       setPostsData(res.data);
     });
@@ -34,7 +44,9 @@ const Feed = () => {
     <FeedWrapper>
         <h1>Welcome to {country.toUpperCase()}</h1>
       <Stories />
-      <Messenger />
+      <Messenger
+        country ={country}
+      />
       {
         postsData.map(entry => (
           <Post
@@ -43,7 +55,6 @@ const Feed = () => {
             timestamp={entry.timestamp}
             imgName={entry.imgName}
             username={entry.user}
-            country={entry.country}
           /> 
         ))
       }
@@ -54,6 +65,7 @@ const FeedWrapper = styled.div`
 flex: 1;
 padding: 30px 150px;
 display: flex;
+max-width: 2000px;
 flex-direction: column;
 align-items: center;
 h1{

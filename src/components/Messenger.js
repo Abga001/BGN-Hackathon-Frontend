@@ -8,7 +8,8 @@ import { useStateValue } from '../StateProvider'
 import axios from 'axios'
 import FormData from 'form-data'
 
-const Messenger = () => {
+const Messenger = (countryName) => {
+    const countryN = {countryName}
     const [input, setInput] = useState('')
     const [image, setImage] = useState(null)
     const [{ user }, dispatch] = useStateValue()
@@ -18,6 +19,7 @@ const Messenger = () => {
     }
     const handleSubmit = e => {
         console.log(`submitting`)
+        // console.log(countryName)
         e.preventDefault()
         if(image) {
         const imgForm = new FormData()
@@ -28,21 +30,25 @@ const Messenger = () => {
         boundary=${imgForm._boundary}`
         }
         }).then(res => {
+        console.log("testn")
         const postData = {
         text: input,
         imgName: res.data.filename,
         user: user.displayName,
         avatar: user.photoURL,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        country: countryN.countryName.country
         }
         savePost(postData)
         })
         } else {
+        console.log(countryN.countryName.country)
         const postData = {
         text: input,
         user: user.displayName,
         avatar: user.photoURL,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        country: countryN.countryName.country
         }
         savePost(postData)
         }
@@ -75,7 +81,7 @@ return (
                     <button 
                         onClick={handleSubmit} 
                         type="submit">
-                            Submit
+                            Post
                     </button>
                 </form>
             </MessengerTop>

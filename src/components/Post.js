@@ -91,6 +91,7 @@ const PostBottom = styled.div`
 `
 const PostOptions = styled.div`
     padding: 10px;
+    height: 10px;
     border-top: 1px solid lightgray;
     display: flex;
     justify-content: space-evenly;
