@@ -126,12 +126,37 @@ const MessengerTop = styled.div`
             margin: 0 10px;
             border-radius: 999px;
             background-color: #eff2f5;
+            width: 60%;
         }
         .messenger__fileSelector{
-width: 20%; }
-        button {
+            width: 30%; 
+            background-color: white;
+            border: none;
+            font-size: medium;
+            margin-left: 10px;
+            color: gray;
+            font-weight: bold;
             // display: none;
-} }
+        }
+        .messenger__fileSelector:hover{
+            background-color: #eff2f5;
+            cursor: pointer; 
+        }
+        button {
+            background-color: white;
+            width: 10%;
+            border: none;
+            font-size: medium;
+            margin-left: 10px;
+            color: gray;
+            font-weight: bold;
+            // display: none;
+        }
+        button:hover{
+            background-color: #eff2f5;
+            border-radius: 20px;
+            cursor: pointer; 
+}
 `
 const MessengerBottom = styled.div`
     display: flex;

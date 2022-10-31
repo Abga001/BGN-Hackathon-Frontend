@@ -92,7 +92,8 @@ const HeaderLeft = styled.div`
   display: flex;
   justify-content: space-evenly;
   img {
-    height: 40px;
+    height: 70px;
+    padding: 0px 0px;
   }
 `;
 const HeaderInput = styled.div`

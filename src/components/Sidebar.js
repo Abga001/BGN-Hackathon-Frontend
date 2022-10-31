@@ -8,9 +8,16 @@ import {
     Storefront,
     VideoLibrary,
     ExpandMore,
+    Shuffle,
   } from "@mui/icons-material";
 import styled from 'styled-components'
 
+var countries = ['United Kingdom','Nigeria','China','India','United States','Somalia','Madagascar','Chile','Spain','Italy','Germany','Ghana','Kenya','Iceland']
+function random(arr){
+    var index = Math.round(Math.random()*arr.length - 1)
+    var item = arr[index];
+    return item
+}
 const Sidebar = () => {
     return (
         <SidebarWrapper>
@@ -20,12 +27,16 @@ const Sidebar = () => {
         <SidebarRow Icon={People} title="Friends" url={window.location.href} />
         <SidebarRow Icon={Chat} title="Upload Caption" url={window.location.href}/>
         <SidebarRow Icon={VideoLibrary} title="Upload Image/Video" url={window.location.href}/>
+        <SidebarRow Icon={Shuffle} title="Random Country" url={`http://localhost:3000/${random(countries)}`}/>
         <SidebarRow Icon={ExpandMore} title="More" url={window.location.href}/>
         </SidebarWrapper>
     )
 }
 
 const SidebarWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
 `
 
 export default Sidebar
