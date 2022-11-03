@@ -1,3 +1,17 @@
+Overview
+
+The aim of this project was to help people share their culture with others.
+
+This project came 2nd as part of the Google BGN Hackathon 🥈
+
+Contributors
+
+Ahmed Kafi
+Austin Kasekende
+Kushal Patel
+Abdullah Abubakar
+Salma Hassan
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
