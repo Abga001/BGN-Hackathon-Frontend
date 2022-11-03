@@ -6,10 +6,10 @@ This project came 2nd as part of the Google BGN Hackathon 🥈
 
 Contributors
 
-Ahmed Kafi
-Austin Kasekende
-Kushal Patel
-Abdullah Abubakar
+Ahmed Kafi,
+Austin Kasekende,
+Kushal Patel,
+Abdullah Abubakar,
 Salma Hassan
 
 # Getting Started with Create React App
